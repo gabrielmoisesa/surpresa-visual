@@ -110,3 +110,7 @@ imagem.addEventListener('error', () => { /* erro no carregamento */ });
 3. Clique em **Nova imagem** para carregar outras imagens.
 
 É necessário estar conectado à internet para que as imagens do Picsum Photos sejam carregadas.
+
+## Autor
+
+[Gabriel Moises Alves](https://github.com/gabrielmoisesa)
