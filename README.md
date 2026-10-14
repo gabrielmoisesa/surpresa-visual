@@ -4,10 +4,6 @@ Projeto desenvolvido para o TED 4 - Manipulação do DOM e dos elementos.
 
 O sistema exibe uma imagem aleatória usando a API do [Picsum Photos](https://picsum.photos/). Ao clicar no botão **Nova imagem**, uma nova imagem é carregada na página. O projeto também apresenta estados de carregamento e erro, contador de imagens exibidas e um layout adaptado para telas menores.
 
-## Enunciado
-
-> Crie um sistema (use a imaginação) que use todos os comandos ensinados nas aulas do dia 06/10 e 08/10.
-
 ## Objetivo
 
 Praticar a manipulação de elementos HTML com JavaScript, atualizando o conteúdo e o estado da página de forma dinâmica, sem precisar recarregar o documento.
