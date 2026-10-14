@@ -1,7 +1,9 @@
 'use strict';
 
-const LARGURA = 960;
-const ALTURA = 600;
+const TAMANHO_PAISAGEM = { largura: 960, altura: 600 };
+const TAMANHO_RETRATO = { largura: 600, altura: 750 };
+
+const CELULAR = window.matchMedia('(max-width: 480px)');
 
 const moldura = document.getElementById('moldura');
 const botao = document.getElementById('btn-nova-imagem');
@@ -10,8 +12,8 @@ const anoRodape = document.getElementById('ano');
 
 let totalExibidas = 0;
 
-function gerarUrl() {
-  return `https://picsum.photos/${LARGURA}/${ALTURA}?random=${Date.now()}`;
+function gerarUrl(tamanho) {
+  return `https://picsum.photos/${tamanho.largura}/${tamanho.altura}?random=${Date.now()}`;
 }
 
 function definirCarregando(carregando) {
@@ -34,10 +36,12 @@ function mostrarErro() {
 function carregarImagem() {
   definirCarregando(true);
 
+  const tamanho = CELULAR.matches ? TAMANHO_RETRATO : TAMANHO_PAISAGEM;
+
   const imagem = document.createElement('img');
   imagem.className = 'imagem';
-  imagem.width = LARGURA;
-  imagem.height = ALTURA;
+  imagem.width = tamanho.largura;
+  imagem.height = tamanho.altura;
   imagem.alt = 'Foto aleatória do Picsum Photos';
 
   imagem.addEventListener('load', () => {
@@ -52,7 +56,7 @@ function carregarImagem() {
     definirCarregando(false);
   });
 
-  imagem.src = gerarUrl();
+  imagem.src = gerarUrl(tamanho);
 }
 
 botao.addEventListener('click', carregarImagem);

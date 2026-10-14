@@ -208,6 +208,7 @@ body {
   }
 
   .moldura {
+    aspect-ratio: 4 / 5;
     border-width: 6px;
     border-radius: 22px;
   }
